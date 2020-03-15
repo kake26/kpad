@@ -1,0 +1,20 @@
+# Gambas Project File 3.0
+Title=Kpad
+Startup=FMain
+Version=0.0.4
+Component=gb.image
+Component=gb.gui.qt
+Component=gb.form
+Component=gb.eval
+Component=gb.eval.highlight
+Component=gb.form.dialog
+Component=gb.util
+Component=gb.form.editor
+Component=gb.settings
+Component=gb.term
+Component=gb.pcre
+Component=gb.signal
+TabSize=2
+Language=en_US
+KeepDebugInfo=0
+Packager=1

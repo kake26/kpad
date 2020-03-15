@@ -1,0 +1,28 @@
+' Gambas class file
+
+' This is annoying about gambas, but I'll have to deal with it
+' A work around for lack of a real project wide global
+
+Export
+Create Static
+
+' This will contain some public code used to "FIX" some sillyness in Gambas
+
+' Variables first some might get removed
+
+Public cbflag As Integer
+Public txtch As Integer
+Public dlgtitle As String
+Public fndin As String
+Public rpstr As String
+
+
+' Allows for waiting on custom dialogs, shouldn't have had to do it like this
+
+Public Sub waitfor() 
+  
+Repeat 
+  Wait 0.2 ' Low delay as we don't want to chew up all the cycles
+Until Global.cbflag = 1  
+  
+End

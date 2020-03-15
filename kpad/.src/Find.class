@@ -1,0 +1,11 @@
+' Gambas class file
+
+
+Public Sub Button1_Click()
+
+  Global.fndin = TextBox1.Text
+  Global.cbflag = 1
+  TextBox1.Clear
+  Find.Hide
+
+End

@@ -1,0 +1,18 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,64,16)
+  Text = ("Find")
+  Resizable = False
+  { Label1 Label
+    MoveScaled(1,5,10,4)
+    Text = ("Find What:")
+  }
+  { Button1 Button
+    MoveScaled(47,10,16,5)
+    Text = ("Find")
+  }
+  { TextBox1 TextBox
+    MoveScaled(11,5,26,4)
+  }
+}

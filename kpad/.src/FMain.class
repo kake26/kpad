@@ -1,0 +1,193 @@
+' Gambas class file
+
+' Notes
+' Plugins are going to be tricky proably to port over
+' On the up shot I won't have to check the OS first
+' There are many features I want to add from the Texteditor class that aren't well documented so I'll have to look at the gambas source itself
+
+Public regx As New RegExp
+Private txtc As Boolean ' Contents of text editor used in combination with tchng to see if a change worthy of saving is made 
+
+
+Public Sub Menu5_Click()
+
+  CloseDoc()
+  Me.Close
+
+
+End
+
+Public Sub Menu2_Click()
+
+  regx.Compile("^(#!)/(.*)/(.*)") ' gambas doesn't seem to want #! and / escaped as would be the norm for pcre
+  ' Works for things like #!/bin/bash or #!/usr/bin/perl
+  'perl -ne 'print "$1 $2 $3" if /^(#!)\/(.*)\/(.*)/' install_lastpass.sh 
+  '#! bin bash
+
+  Dialog.OpenFile() ' Dialog behaves a little like $_ when looking for its value
+  If Dialog.Path Then
+  TextEditor1.Load(Dialog.Path) ' Love this componet, has all the features, but not well documented 
+  Else
+  
+  Endif
+  ' Some code to examine if this runable script by checking for the shebang line #!/usr/bin/perl for example
+  ' I think we can use PCRE here, check first line for #! using capture groups
+  
+  regx.Exec(TextEditor1.Text)
+  If regx.Count > 1 Then
+    Menu24.Caption = "With " & regx[3].Text
+    Menu24.Enabled = True
+    Else
+  Endif
+  FMain.Title = "Kpad " & Dialog.Path
+  txtc = TextEditor1.Text 
+
+End
+
+Public Sub Menu3_Click()
+
+  If Dialog.Path Then
+  TextEditor1.Save(Dialog.Path)
+    Else
+  Dialog.SaveFile()
+  TextEditor1.Save(Dialog.Path)
+  Endif
+  txtc = False
+  
+
+End
+
+'Public Sub FMain_Open() != Form_Open()
+
+  ' much like the original perl plugin load / initialize goes here
+  ' we will stick with the .kpd extension for them
+  ' This whille be added later once we figure out how eval works and if its doable in the same way
+
+Private Function CloseDoc() As Boolean
+
+  If txtc Then
+    Select Case Message.Question(("\n\nFile has been modified. Do you want to save it ?"), ("Yes"), ("No"), ("Cancel"))
+      Case 1
+        Dialog.SaveFile()
+        TextEditor1.Save(Dialog.Path)
+      Case 3
+        Return True
+    End Select
+  Endif
+
+  txtc = False
+  
+
+End
+
+Private Sub SetModify(modded As Boolean)
+
+  If txtc = modded Then Return
+  txtc = modded
+  
+
+End
+
+
+' The following might be good to hook for detecting changes in the editor so we can make sure to save
+
+Public Sub TextEditor1_Change()
+  
+  SetModify(True)
+  
+End
+
+Public Sub Menu4_Click()
+
+  If Menu4.Checked Then
+    TextEditor1.Wrap = True
+    Else 
+    TextEditor1.Wrap = False
+  Endif
+
+End
+
+Public Sub Menu10_Click()
+
+  TextEditor1.HighlightString(Null, True, True)
+  Global.fndin = Null
+  Find.Show
+  Global.waitfor() ' wait for find form to be done
+  TextEditor1.HighlightString(Global.fndin, True, True) ' Seems like a good idea to highlight
+  Global.cbflag = 0
+  
+End
+
+Public Sub Menu12_Click()
+
+If Menu12.Checked Then
+  TextEditor1.ShowLineNumber = True
+Else
+  TextEditor1.ShowLineNumber = False
+Endif
+
+End
+
+Public Sub Menu13_Click()
+
+If Menu13.Checked Then
+  TextEditor1.ShowPosition = True
+Else
+  TextEditor1.ShowPosition = False
+Endif
+  
+End
+
+Public Sub Menu14_Click()
+
+  TextEditor1.Cut()
+
+End
+
+Public Sub Menu15_Click()
+
+  TextEditor1.Copy()
+
+End
+
+Public Sub Menu16_Click()
+
+  TextEditor1.Paste()
+
+End
+
+Public Sub Menu9_Click()
+
+  Message.Info("Kpad v6 beta ported to gambas \n Parts may fall off", "Ok")
+
+End
+
+Public Sub Menu22_Click()
+
+  TextEditor1.SelectAll()
+
+End
+
+Public Sub Menu24_Click()
+
+  ' This does work but gambas app launched from a console, looks like gb.term.form might be option in the future
+  Exec [regx[3].Text, Dialog.Path] ' We might want to pop that into a visible window for shell stuff, does work
+  'Shell(regx[3].Text & " " & Dialog.Path)
+End
+
+Public Sub Menu25_Click()
+
+  TextEditor1.Clear()
+  FMain.Title = "Kpad New File"
+
+End
+
+Public Sub Form_Close()
+
+  If CloseDoc() Then Stop Event
+
+End
+
+Public Sub Form_Open()
+txtc = False
+End

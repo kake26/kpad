@@ -1,0 +1,102 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,65,63)
+  Expand = True
+  Text = ("Kpad")
+  Arrangement = Arrange.Fill
+  AutoResize = True
+  { Menu1 Menu
+    Text = ("File")
+    { Menu25 Menu
+      Text = ("New")
+    }
+    { Menu2 Menu
+      Text = ("Open")
+    }
+    { Menu3 Menu
+      Text = ("Save / Save As")
+      Shortcut = "Ctrl+S"
+    }
+    { Menu5 Menu
+      Text = ("Exit")
+      Shortcut = "Ctrl+X"
+    }
+  }
+  { Menu6 Menu
+    Text = ("Edit")
+    { Menu10 Menu
+      Text = ("Find")
+    }
+    { Menu11 Menu
+      Text = ("Replace")
+      Enabled = False
+    }
+    { Menu19 Menu
+      Text = ("--------")
+    }
+    { Menu14 Menu
+      Text = ("Cut")
+    }
+    { Menu15 Menu
+      Text = ("Copy")
+    }
+    { Menu16 Menu
+      Text = ("Paste")
+    }
+    { Menu22 Menu
+      Text = ("Select All")
+    }
+    { Menu20 Menu
+      Text = ("--------")
+    }
+    { Menu17 Menu
+      Text = ("Redo")
+    }
+    { Menu18 Menu
+      Text = ("Undo")
+    }
+  }
+  { Menu7 Menu
+    Text = ("View")
+    { Menu4 Menu
+      Text = ("Word Wrap")
+      Toggle = True
+    }
+    { Menu13 Menu
+      Text = ("Cursor Position")
+      Toggle = True
+    }
+    { Menu12 Menu
+      Text = ("Line Numbers")
+      Toggle = True
+    }
+  }
+  { Menu23 Menu
+    Text = ("Run")
+    { Menu24 Menu
+      Text = ("Run with")
+      Enabled = False
+    }
+  }
+  { Menu21 Menu
+    Text = ("Plugins")
+    Enabled = False
+  }
+  { Menu8 Menu
+    Text = ("Help")
+    { Menu9 Menu
+      Text = ("About")
+    }
+  }
+  { Panel1 Panel
+    MoveScaled(0,0.1429,64,59)
+    Expand = True
+    Arrangement = Arrange.Fill
+    AutoResize = True
+    { TextEditor1 TextEditor
+      MoveScaled(0,0,64,59)
+      Expand = True
+    }
+  }
+}
