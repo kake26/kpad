@@ -1,0 +1,20 @@
+# Current features
+
+The following is a list of features currently available. 
+
+1. Syntax highlighting for Gambas, HTML, CSS, SQL, JavaScript and webpage
+2. Show line numbers
+3. Show current cursor position
+4. Automatic shebang line detection of scripts for easy execution in a pop up terminal window from the run menu.
+5. Ondemand pop up terminal window
+6. The basic features of text editor such as cut,copy,paste, find and replace(Replace isn't working yet)
+
+# Planned additions
+
+1. Showing Braces
+2. Tab indentation
+3. Showing closing braces
+4. Showing close strings
+
+Also any other useful stuff that I might find the editor to be capable of. Point is not to recreate the gambas IDE, but make a nice
+little text editor type thing that lends itself to coding as well.
