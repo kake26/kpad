@@ -18,6 +18,7 @@ gb.eval.highlight
 gb.form
 gb.form.dialog
 gb.form.editor
+gb.form.terminal
 gb.gui.qt
 gb.image *
 gb.pcre
@@ -25,6 +26,7 @@ gb.settings *
 gb.signal *
 gb.term
 gb.util
+
 
 # Written on Manjaro Linux with the latest available AUR repo Gambas
 
