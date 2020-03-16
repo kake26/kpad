@@ -1,0 +1,15 @@
+' Gambas class file
+
+
+Public Sub Form_Open()
+
+  
+
+End
+
+Public Sub Button1_Click()
+
+  FMain.TextEditor1.FindNextString(TextBox1.text, 1)
+
+
+End

@@ -1,7 +1,7 @@
 # Gambas Project File 3.0
 Title=Kpad
 Startup=FMain
-Version=0.0.4
+Version=0.0.7
 Component=gb.image
 Component=gb.gui.qt
 Component=gb.form
@@ -12,8 +12,11 @@ Component=gb.util
 Component=gb.form.editor
 Component=gb.settings
 Component=gb.term
+Component=gb.form.terminal
 Component=gb.pcre
 Component=gb.signal
+Description="Gambas version of kake pad"
+Authors="Paul M"
 TabSize=2
 Language=en_US
 KeepDebugInfo=0

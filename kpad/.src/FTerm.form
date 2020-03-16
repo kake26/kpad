@@ -1,0 +1,14 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,64,64)
+  Text = ("Terminal Output")
+  Arrangement = Arrange.Fill
+  AutoResize = True
+  { TerminalView1 TerminalView
+    MoveScaled(0,0,64,64)
+    Expand = True
+    Blink = True
+    ShowScrollBar = True
+  }
+}

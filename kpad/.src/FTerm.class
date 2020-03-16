@@ -1,0 +1,9 @@
+' Gambas class file
+
+
+Public Sub termrun()
+  
+'Exec [FMain.regx[3], Dialog.Path]  
+ TerminalView1.Exec(Global.termrun)
+  
+End

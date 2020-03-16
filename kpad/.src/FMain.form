@@ -30,7 +30,6 @@
     }
     { Menu11 Menu
       Text = ("Replace")
-      Enabled = False
     }
     { Menu19 Menu
       Text = ("--------")
@@ -59,6 +58,33 @@
   }
   { Menu7 Menu
     Text = ("View")
+    { Menu26 Menu
+      Text = ("Highlighting")
+      { Menu27 Menu
+        Text = ("Gambas")
+        Radio = True
+      }
+      { Menu28 Menu
+        Text = ("HTML")
+        Radio = True
+      }
+      { Menu29 Menu
+        Text = ("CSS")
+        Radio = True
+      }
+      { Menu30 Menu
+        Text = ("JavaScript")
+        Radio = True
+      }
+      { Menu31 Menu
+        Text = ("SQL")
+        Radio = True
+      }
+      { Menu32 Menu
+        Text = ("WebPage")
+        Radio = True
+      }
+    }
     { Menu4 Menu
       Text = ("Word Wrap")
       Toggle = True
@@ -70,6 +96,9 @@
     { Menu12 Menu
       Text = ("Line Numbers")
       Toggle = True
+    }
+    { Menu33 Menu
+      Text = ("View Terminal")
     }
   }
   { Menu23 Menu

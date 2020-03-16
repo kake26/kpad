@@ -11,11 +11,11 @@ Create Static
 ' Variables first some might get removed
 
 Public cbflag As Integer
-Public txtch As Integer
-Public dlgtitle As String
+'Public txtch As Integer
+'Public dlgtitle As String
 Public fndin As String
 Public rpstr As String
-
+Public termrun As String[]
 
 ' Allows for waiting on custom dialogs, shouldn't have had to do it like this
 

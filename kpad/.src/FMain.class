@@ -12,7 +12,7 @@ Private txtc As Boolean ' Contents of text editor used in combination with tchng
 Public Sub Menu5_Click()
 
   CloseDoc()
-  Me.Close
+  
 
 
 End
@@ -76,7 +76,7 @@ Private Function CloseDoc() As Boolean
   Endif
 
   txtc = False
-  
+  Me.Close
 
 End
 
@@ -170,9 +170,10 @@ End
 
 Public Sub Menu24_Click()
 
-  ' This does work but gambas app launched from a console, looks like gb.term.form might be option in the future
-  Exec [regx[3].Text, Dialog.Path] ' We might want to pop that into a visible window for shell stuff, does work
-  'Shell(regx[3].Text & " " & Dialog.Path)
+Global.termrun = [regx[3].Text, Dialog.Path]
+  FTerm.Show 
+  FTerm.termrun()
+  
 End
 
 Public Sub Menu25_Click()
@@ -190,4 +191,68 @@ End
 
 Public Sub Form_Open()
 txtc = False
+End
+
+Public Sub Menu11_Click()
+
+  Replace.Show()
+
+End
+
+Public Sub Menu27_Click()
+
+  If Menu27.Checked Then
+    TextEditor1.Highlight = "gambas"
+    
+  Endif
+
+End
+
+Public Sub Menu28_Click()
+
+  If Menu28.Checked Then
+    TextEditor1.Highlight = "html"
+  Endif
+
+End
+
+Public Sub Menu29_Click()
+
+  If Menu29.Checked Then
+    TextEditor1.Highlight = "css"
+  Endif
+
+End
+
+Public Sub Menu30_Click()
+
+  If Menu30.Checked Then
+    TextEditor1.Highlight = "javascript"
+  Endif
+
+End
+
+Public Sub Menu31_Click()
+
+  If Menu31.Checked Then
+    TextEditor1.Highlight = "sql"
+  Endif
+
+End
+
+Public Sub Menu32_Click()
+
+  If Menu32.Checked Then
+    TextEditor1.Highlight = "webpage"
+  Endif
+
+End
+
+Public Sub Menu33_Click()
+
+  Global.termrun = ["/bin/bash"]
+  FTerm.Show
+  FTerm.termrun()
+  
+
 End
