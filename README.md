@@ -8,7 +8,8 @@ lacks one or two features from my original at this moment. I've also decieded to
 
 # This program requires: 
 
-Gambas 3.14.3
+Gambas 3.14.3, Linux
+Note Gambas doesn't have a windows port, but might run under cygwin. Therefore running this app under Windows might be tricky.
 
 # And these Gambas componets
 
